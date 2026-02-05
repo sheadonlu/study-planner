@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Study Planner</h1>
+            <p>Let's lock in</p>
+        </header>
+        <main class="grid">
+            <section class="card">
+                <h2>Add a task</h2>
+                <form id="taskForm" class="form">
+                    <label>
+                        Task
+                        <input id="titleInput" type="text" placeholder="What next :(" />
+                    </label>
+
+                    <label>
+                        Due Date
+                        <input id="dateInput" type="date" />
+                    </label>
+
+                    <label>
+                        Priority
+                        <select id="priorityInput">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </label>
+
+                    <button type="submit" class="primary">Add Task</button>
+                    <p id="formError" class="error"></p>
+                </form>
+            </section>
+
+            <section class="card">
+                <h2>Your tasks</h2>
+                <div class="controls">
+                <input id="searchInput" type="text" placeholder="Search tasks..." />
+
+                <select id="filterSelect">
+                    <option value="all" selected>All</option>
+                    <option value="upcoming">Upcoming</option>
+                    <option value="today">Due today</option>
+                    <option value="overdue">Overdue</option>
+                    <option value="done">Completed</option>
+                </select>
+
+                <select id="sortSelect">
+                    <option value="dueAsc" selected>Sort: due date (soonest)</option>
+                    <option value="dueDesc">Sort: due date (latest)</option>
+                    <option value="createdDesc">Sort: recently added</option>
+                </select>
+                <div id="list" class="list"></div>
+                <p id="emptyState" class="muted">No tasks yet</p>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
